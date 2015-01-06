@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Senskit Gateway Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+  <!-- c3.css -->
+  <link href="vendor/css/c3.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#"><img class="navbar-brand" src="img/ei-logo-ide.png"></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <a class="navbar-brand heading" href="#">Sensekit Dashboard</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://betzrhodes.github.io/SensekitGatewayAssetTracker/">Asset Tracker</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row page">
+      <!-- SideBar -->
+      <div class="col-sm-3 col-md-2 sidebar devices">
+
+        <h5>Demo Tags</h5>
+        <ul class="nav nav-sidebar demo-tags">
+        </ul>
+        <h5>Asset Tags</h5>
+        <ul class="nav nav-sidebar asset-tags">
+        </ul>
+        <h6 class="time"></h6>
+      </div>
+
+      <!-- Dashboard -->
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <button type="button" id="disconnect" class="hidden btn">Disconnect</button>
+        <h1 class="page-header">Sensor Data</h1>
+
+        <div class="row dash-msg">
+          <h3>Click on a Tag to see Data!</h3>
+        </div>
+
+        <div class="readings hidden">
+          <div class="row widgets">
+            <div class="col-xs-6 col-sm-3 temp">
+              <div class="widget">
+                <p class="dash-heading1">Temperature</p>
+                <p class="heading-border"><p>
+                <h2>°C</h2>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 humidity">
+              <div class="widget">
+                <p class="dash-heading1">Humidity</p>
+                <p class="heading-border"><p>
+                <div class="gauge" id="humid-gauge"></div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 pressure">
+              <div class="widget">
+                <p class="dash-heading1">Pressure</p>
+                <p class="heading-border"><p>
+                <div class="gauge" id="press-gauge"></div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 mag">
+              <div class="widget">
+                <p class="dash-heading1">Magnetometer</p>
+                <p class="heading-border"><p>
+                <div class="gauge">
+                  <div class='mag-gauge mag-0'><p></p></div>
+                  <div class='mag-gauge mag-1'><p></p></div>
+                  <div class='mag-gauge mag-2'><p></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive hidden">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Sensor</th>
+                  <th>Reading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class = "press">
+                  <td>Pressure</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "humid">
+                  <td>Humidity</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "temp">
+                  <td>Temperature</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "gyro">
+                  <td>Gyro</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "mag">
+                  <td>Magnitometer</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "accel">
+                  <td>Accelerometer</td>
+                  <td class = "reading"></td>
+                </tr>
+                <tr class = "batt">
+                  <td>Battery</td>
+                  <td class = "reading"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="accel-graph">
+            <h3>Accelerometer Graph</h3>
+            <div id="chart_div"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="vendor/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="vendor/js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Flot -->
+  <script language="javascript" type="text/javascript" src="vendor/js/jquery.flot.min.js"></script>
+  <script language="javascript" type="text/javascript" src="vendor/js/jquery.flot.time.min.js"></script>
+  <script language="javascript" type="text/javascript" src="vendor/js/jquery.flot.resize.min.js"></script>
+  <script language="javascript" type="text/javascript" src="vendor/js/jquery.flot.selection.min.js"></script>
+  <!-- d3.js and c3.js -->
+  <script src="vendor/js/d3.min.js" charset="utf-8"> </script>
+  <script src="vendor/js/c3.min.js"> </script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+  <!-- JavaScript File -->
+  <script type="text/javascript" src="sensekit_dashboard.js"></script>
+</body>
+</html>

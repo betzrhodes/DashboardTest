@@ -1,0 +1,315 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  background-color: #636363;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+  color:#DBDBDB;
+}
+
+a {
+  color: #B7BFB2;
+  white-space: pre;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+a:hover, a:focus {
+  color: #206118;
+  text-decoration: none;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: #C5C9C3;
+  border: 1px solid #206118;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #DBDBDB;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:active {
+  color: #DBDBDB;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #DBDBDB;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+  color: #EBEBEB;
+  border: 0px solid #000;
+}
+
+#navbar .navbar-brand {
+  position: absolute;
+  width: 82%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #000;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  font-size: 12px;
+  margin: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #C9C9C9;
+  background-color: #206118;
+  border: 1px solid #C9C9C9;
+/*  border: 1px solid #1E5717;*/
+}
+
+.sidebar h5 {
+  color: #DBDBDB;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+#disconnect {
+  float: right;
+}
+
+.dash-msg {
+  background-color: transparent;
+  margin: 3% auto;
+  width: 75%;
+  padding: 0.5% 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+/*  box-shadow: 0 1px 3px rgba(204, 204, 204, .7);*/
+  box-shadow: 0 2px 5px rgba(35, 35, 35, .7);
+  text-align: center;
+}
+
+.dash-msg h3 {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.widgets {
+  margin-bottom: 30px;
+  height: auto;
+}
+
+.widgets h2 {
+  margin-top: 15%;
+  font-size: 2.5em;
+  color: #E1E8DF;
+  text-align: center;
+}
+@media (min-width: 1010px) {
+  .widgets h2 {
+  margin-top: 15%;
+  font-size: 3em;
+  }
+}
+@media (min-width: 1300px) {
+  .widgets h2 {
+    margin-top: 10%;
+    font-size: 3.6em;
+  }
+}
+@media (min-width: 1600px) {
+  .widgets h2 {
+    margin-top: 10%;
+    font-size: 3.8em;
+  }
+}
+
+.widget {
+  background-color: transparent;
+  border: 1px solid #BFC2BE;
+  margin: 1.5%;
+  width: 97%;
+/*  height: 170px;*/
+  padding: 0.5% 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(35, 35, 35, .7);
+/*box-shadow: 0 1px 2px rgba(204, 204, 204, .7);*/
+}
+
+.hidden {
+  display: none;
+}
+
+.time {
+  font-size: 0.9em;
+  margin: 0;
+  text-align: center;
+}
+
+.dash-heading1 {
+  font-size: 1.2em;
+  color: #B7BFB2;
+  padding: 3% 5%;
+  margin-bottom: 0;
+}
+
+.heading-border {
+  border-bottom: 1px solid #D9E0D5;
+}
+
+.legendLabel {
+  color: #CCCCCC;
+  padding-left: 20%;
+}
+
+.sidebar h5 {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.c3-chart-arc .c3-gauge-value {
+  fill: #E1E8DF;
+  font-size: 22px !important;
+}
+
+.page-header {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.btn {
+  color: #DBDBDB;
+  background-color: transparent;
+  border: 1px solid #CCCCCC;
+}
+
+.btn:hover {
+  /*color: #206118;*/
+  color: #DBDBDB;
+  background-color: #5C5C5C;
+  border: 1px solid #B7BFB2;
+}
+
+.mag-gauge {
+  text-align: center;
+  margin: 3.3% 10%;
+  border: 1px solid #E1E8DF;
+}
+
+.mag-gauge p {
+  font-size: 14px;
+  margin: auto;
+  color: #E1E8DF;
+}
+
+.gauge {
+  margin: auto;
+}
+
+#chart_div {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10%;
+}
+
+@media (min-height: 855px) {
+  #chart_div {
+    height: 500px;
+  }
+  .mag-gauge p {
+    font-size: 16px;
+  }
+}
+
+@media (min-height: 975px) {
+  #chart_div {
+    height: 600px;
+  }
+  .mag-gauge p {
+    font-size: 18px;
+  }
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+}
+
+.negative {
+  background-color: #004EF5;
+  /*background-color: rgba(0, 78, 245, 0.9);*/
+}
+
+.positive {
+  background-color: #DB0000;
+ /*background-color: rgba(204, 0, 0, 0.9);*/
+}
+
+.zero {
+  background-color: #26A816;
+  /*background-color: rgba(38, 168, 22, 0.9);*/
+}
