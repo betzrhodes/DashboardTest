@@ -2,7 +2,7 @@ $(document).ready(function() {
   // constants
   const refreshDataRate = 1000;
   const sidebarRefreshRate = 5000;
-  const agentAddress = "https://agent.electricimp.com/Q55EE8z8iNZE";
+  const agentAddress = "https://agent.electricimp.com/JhCw4IJpfWY9";
   const tagRef = new Firebase ("https://bletracker.firebaseio.com/tags")
 
   // variables
